@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan+2|Open+Sans:400,700&display=swap');
+
+:root {
+  --main-font: 'Open Sans', sans-serif;
+  --second-font: 'Baloo Chettan 2', cursive;
+}
+
+._flex {
+  display: flex;
+}
+
+._col-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  font-family: var(--main-font);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+._row {
+  @extend ._flex;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+._col {
+  @extend  ._col-flex;
+  margin-left: -15px;
+  margin-right: -15px;
+}

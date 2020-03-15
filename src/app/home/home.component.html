@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div class="list-items" ngIf="products; else noPriducts">
+    <a class="item" *ngFor="let product of products;">
+      <span class="item__header _flex">
+        <span class="item__price">{{product.price | currency}}</span>
+        <button class="item__add">+</button>
+      </span>
+
+      <h3 class="item__title">{{product.title}}</h3>
+      <span class="item__description">{{product.description}}</span>
+    </a>
+  </div>
+
+  <div class="empty" #noPriducts>
+    <h2>There are no products available!</h2>
+  </div>
+
+</div>
