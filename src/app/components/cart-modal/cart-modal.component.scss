@@ -1,0 +1,52 @@
+.close {
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 28px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: -20px -20px 0 0;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all .2s;
+  border: none;
+  transform: rotate(45deg);
+  background-color: #ccc;
+
+  &:hover {
+    transform: rotate(225deg);
+    cursor: pointer;
+    background-color: #ffffff;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  flex: 1 1 100%;
+}
+
+main {
+  flex: 1 1 100%;
+}
+
+footer {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.purchase {
+  background-color: springgreen;
+  color: #000;
+  font-weight: bold;
+  opacity: .7;
+  transition: all .2s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
