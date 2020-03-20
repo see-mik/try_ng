@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject} from 'rxjs/index';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/index';
 
 export interface Product {
   id: number;
@@ -20,7 +20,7 @@ export class CartService {
   }
 
   getCart() {
-     return this.subject;
+    return this.subject;
   }
 
   addToCart(product: Product) {
@@ -28,8 +28,8 @@ export class CartService {
     this.subject.next(this.cart);
   }
 
-  removeFromCart(idx: number) {
-    this.cart = this.cart.slice(idx, 1);
+  removeFromCart(id: number) {
+    this.cart = this.cart.filter(item => item.id !== id);
     this.subject.next(this.cart);
   }
 

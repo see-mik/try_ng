@@ -1,28 +1,36 @@
-<h1 mat-dialog-title>Your order:</h1>
-<button class="close"
-        mat-dialog-close
->+</button>
-
-<div mat-dialog-content
-     class="content"
+<h1 mat-dialog-title>
+    You ordered:
+  {{count}}
+  {{ count > 1 ? 'items' : 'item' }}
+</h1>
+<button
+    class="close"
+    mat-dialog-close
 >
-  <main class="_col-flex">
-    <app-cart-item
-      *ngFor="let item of products; let i = index"
-      [product]="item"
-      [removeItem]="removeItem"
-    >
-    </app-cart-item>
-  </main>
+    +
+</button>
 
-  <footer class="_flex">
-    <h4>
-      Total: {{0 | currency}}
-    </h4>
+<div
+    mat-dialog-content
+    class="content"
+>
+    <main class="_col-flex">
+        <app-cart-item
+            *ngFor="let item of products; let i = index"
+            [product]="item"
+            (handleRemove)="removeItem(item.id)"
+        >
+        </app-cart-item>
+    </main>
 
-    <button class="btn purchase"
-            (click)="onPurchase()">
-      Purchase
-    </button>
-  </footer>
+    <footer class="_flex">
+        <h4>Total: {{total | currency}}</h4>
+
+        <button
+            class="btn purchase"
+            (click)="onPurchase()"
+        >
+            Purchase
+        </button>
+    </footer>
 </div>

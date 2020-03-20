@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { CartService } from '../../services/cart.service';
 
 @Component({
@@ -9,18 +9,30 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartModalComponent {
   products;
+  count = 0;
+  total = 0;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data,
-              private cartService: CartService) {
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data,
+    private dialog: MatDialog,
+    private cartService: CartService
+  ) {
     this.cartService.getCart().subscribe(cart => {
       this.products = cart;
+      this.count = cart.length;
+      this.total = cart.reduce((sum, item) => sum + item.price, 0);
     });
   }
 
   onPurchase() {
+    alert('Now go to payment !');
+
+    this.dialog.closeAll();
   }
 
-  removeItem(i) {
-    this.cartService.removeFromCart(i);
+  removeItem(id) {
+    this.cartService.removeFromCart(id);
   }
+
+  /* TODO: Create method to group the same items in a cart */
 }
