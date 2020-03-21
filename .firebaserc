@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "try-ng-27f99": {
+      "hosting": {
+        "robota-ua": [
+          "try-ng-27f99"
+        ]
+      }
+    }
+  }
+}
