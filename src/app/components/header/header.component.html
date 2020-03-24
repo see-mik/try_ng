@@ -3,9 +3,10 @@
     <div class="header__row _row">
       <a routerLict="/" class="logo">Logo</a>
 
-      <ul class="menu">
-        <li><a href=""></a></li>
-      </ul>
+      <nav>
+        <a routerLink="/" class="btn btn-primary active" role="button" routerLinkActive="active">Home</a>
+        <a routerLink="admin" class="btn btn-primary active" role="button" routerLinkActive="active">Admin</a>
+      </nav>
 
       <app-cart-button [count]="inCart"></app-cart-button>
     </div>

@@ -33,6 +33,4 @@ export class CartModalComponent {
   removeItem(id) {
     this.cartService.removeFromCart(id);
   }
-
-  /* TODO: Create method to group the same items in a cart */
 }
